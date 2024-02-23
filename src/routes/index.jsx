@@ -16,6 +16,19 @@ import Profile from "../pages/protected/Profile";
 const Routes = () => {
   const { isSignIn } = useAuth();
 
+  // 모두가 접근 가능한 public Route
+  const publicRoutes = [
+    {
+      path: "/about-us",
+      element: <>About Us</>,
+    },
+
+    {
+      path: "/read-me",
+      element: <>Read Me</>,
+    },
+  ];
+
   // 로그인 안 한 유저들을 위한 라우트
   // 로그인 안 한 유저들은 '/' 에 Public Home 이 노출됨
   const routesForNotAuthenticatedOnly = [
