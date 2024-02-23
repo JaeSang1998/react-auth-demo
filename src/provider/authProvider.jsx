@@ -14,20 +14,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const isSignIn = !!user;
 
-  useEffect(() => {
-    checkUser();
-  }, []);
-
-  const checkUser = async () => {
-    try {
-      const { data: user } = await authApiInstance.get("/user");
-      setUser(user);
-      return true;
-    } catch (error) {
-      return false;
-    }
-  };
-
   // 로그인 로직
   // authApiInstance 에 default header 를 업데이트 해주고,
   // user 를 setting 해줌
